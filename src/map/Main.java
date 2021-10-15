@@ -3,7 +3,11 @@ package map;
 import java.util.Scanner;
 
 public class Main {
-
+    /**
+     * sortare recursiva, sortat de la mic la mare
+     * @param arr de valori de tip integer
+     * @param n lungimea array-ului
+     */
     static void bubbleSort(int arr[], int n)
     {
         if (n == 1)
@@ -21,9 +25,13 @@ public class Main {
             }
         }
 
-        bubbleSort(arr, n-1);           //one pass done, proceed to the next
+        bubbleSort(arr, n-1);
     }
 
+    /**
+     * am calculat minimul si maximul cat timp am citit de pe tastatura array-ul
+     * @param args
+     */
     public static void main(String[] args) {
         //folosesc un obiect de clasa Scanner pentru a citi de pe tastatura lungimea array-ului
 	    Scanner console = new Scanner(System.in);
@@ -39,7 +47,7 @@ public class Main {
             if(arr[i] < min) min=arr[i];
         }
         int[] sorted_arr = arr;
-        //pentru a putea calcula cat mai usor suma intre n-1 elemente ale array-ului fara a avea doua for-uri una in alta
+        //pentru a putea calcula cat mai usor suma intre n-1 elemente ale array-ului
         //am sortat intr-o functie de tip bubble sort array-ul de la mic la mare
         bubbleSort(sorted_arr, n);
         int sum_min = 0;
